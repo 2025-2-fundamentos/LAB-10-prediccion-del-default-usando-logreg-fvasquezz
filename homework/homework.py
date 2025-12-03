@@ -117,8 +117,8 @@ from sklearn.metrics import confusion_matrix
 
 def cargar_datos():
 
-    df_train=pd.read_csv("../files/input/train_data.csv.zip")
-    df_test=pd.read_csv("../files/input/test_data.csv.zip")
+    df_train=pd.read_csv("files/input/train_data.csv.zip")
+    df_test=pd.read_csv("files/input/test_data.csv.zip")
     return df_train, df_test
 
 def limpieza(df):
@@ -245,7 +245,7 @@ def calculate_confusion_matrix(model, X, y, dataset_type):
     }
 
 def guardar_modelo(modelo):
-    carpeta="../files/models"
+    carpeta="files/models"
     if not os.path.exists(carpeta):
         os.makedirs(carpeta)
 
@@ -263,7 +263,7 @@ def guardar_metricas(model, x_train, y_train, x_test, y_test):
     
     resultados = [m_train, m_test, cm_train, cm_test]
     
-    carpeta = "../files/output"
+    carpeta = "files/output"
     if not os.path.exists(carpeta):
         os.makedirs(carpeta)
         
